@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OtosLotto
+namespace HetesLotto
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace OtosLotto
 
         static void Feltolt()
         {
-            for (int i = 1; i < 91; i++)
+            for (int i = 1; i < 36; i++)
             {
                 szamok.Add(i);
             }
@@ -24,10 +24,10 @@ namespace OtosLotto
         static List<int> Sorsol(List<int> sorsoltak)
         {
             Random r = new Random();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 7; i++)
             {
                 int szam = 0;
-                szam = r.Next(1, 91).GetHashCode();
+                szam = r.Next(1, 36).GetHashCode();
                 if (!Tartalmazza(sorsoltak, szam))
                 {
                     sorsoltak.Add(szam);
@@ -44,12 +44,12 @@ namespace OtosLotto
 
         static List<int> Tipp(List<int> tippeltek)
         {
-            for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 8; i++)
             {
                 Console.WriteLine($"Tipp {i}: ");
                 int szam = int.Parse(Console.ReadLine());
 
-                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 91 > szam)
+                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 36 > szam)
                 {
                     tippeltek.Add(szam);
                 }
@@ -111,6 +111,12 @@ namespace OtosLotto
                 case 5:
                     Console.WriteLine(5 * 10);
                     break;
+                case 6:
+                    Console.WriteLine(6*10);
+                    break;
+                case 7:
+                    Console.WriteLine(7*10);
+                    break;
             }
         }
 
@@ -127,19 +133,19 @@ namespace OtosLotto
             Torles(sorsoltak, tippeltek, talalat);
             Feltolt();
             Sorsol(sorsoltak);
-            Console.WriteLine("*Sz·mok*");
+            Console.WriteLine("*Sz√°mok*");
             foreach (var sz in szamok)
             {
                 Console.Write($"{sz} - ");
             }
-            Console.WriteLine("\n\n*Sorsol·s*");
+            Console.WriteLine("\n\n*Sorsol√°s*");
             foreach (var s in sorsoltak)
             {
                 Console.WriteLine(s);
             }
             Console.WriteLine();
 
-            Console.WriteLine("*TippelÈs*");
+            Console.WriteLine("*Tippel√©s*");
             Tipp(tippeltek);
             Console.WriteLine();
             foreach (var t in tippeltek)
@@ -147,12 +153,12 @@ namespace OtosLotto
                 Console.WriteLine($"{t} ");
             }
             Console.WriteLine();
-            Console.WriteLine("*Tal·latok*");
+            Console.WriteLine("*Tal√°latok*");
 
             talalat = Vizsgal(sorsoltak, tippeltek);
-            Console.WriteLine($"Tal·latok sz·ma: {talalat}");
+            Console.WriteLine($"Tal√°latok sz√°ma: {talalat}");
             Console.WriteLine();
-            Console.WriteLine("*Vizsg·lat - kifizetÈs*");
+            Console.WriteLine("*Vizsg√°lat - kifizet√©s*");
             Kifizet(talalat);
             Console.ReadKey();
         }
@@ -161,7 +167,7 @@ namespace OtosLotto
         {
             int talalat = 0;
             Torles(sorsoltak, tippeltek, talalat);
-            //tÈt bekÈrÈse
+            //t√©t bek√©r√©se
             Feltolt();
             Sorsol(sorsoltak);
             Tipp(tippeltek);
@@ -169,17 +175,11 @@ namespace OtosLotto
             Kifizet(talalat);
         }
 
-        static void Main(string[] args)
-        {
-            //Teszteles();
-            Jatek();
-        }
-
         private static void Jatek()
         {
             bool jatek = true;
 
-            Console.WriteLine("SzeretnÈl j·tszani? i/n");
+            Console.WriteLine("Szeretn√©l j√°tszani? i/n");
             string bekert = Console.ReadLine();
             if (bekert == "i")
             {
@@ -205,10 +205,10 @@ namespace OtosLotto
                 }
                 Console.WriteLine();
                 talalat = Vizsgal(sorsoltak, tippeltek);
-                Console.WriteLine($"Tal·lataid sz·ma: {talalat}");
+                Console.WriteLine($"Tal√°lataid sz√°ma: {talalat}");
                 Kifizet(talalat);
                 Console.WriteLine();
-                Console.WriteLine("SzeretnÈl j·tszani? i/n");
+                Console.WriteLine("Szeretn√©l j√°tszani? i/n");
                 bekert = Console.ReadLine();
                 if (bekert == "i")
                 {
@@ -220,6 +220,12 @@ namespace OtosLotto
                     jatek = false;
                 }
             }
+        }
+
+
+        static void Main(string[] args)
+        {
+            Jatek();
         }
     }
 }

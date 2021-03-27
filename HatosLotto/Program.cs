@@ -50,7 +50,7 @@ namespace HatosLotto
                 Console.WriteLine($"Tipp {i}: ");
                 int szam = int.Parse(Console.ReadLine());
 
-                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 91 > szam)
+                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 46 > szam)
                 {
                     tippeltek.Add(szam);
                 }
@@ -171,7 +171,6 @@ namespace HatosLotto
             Sorsol(sorsoltak);
             Tipp(tippeltek);
             talalat = Vizsgal(sorsoltak, tippeltek);
-            Vizsgal(sorsoltak, tippeltek);
             Kifizet(talalat);
         }
 
