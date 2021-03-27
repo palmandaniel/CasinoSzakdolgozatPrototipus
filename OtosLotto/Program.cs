@@ -49,7 +49,7 @@ namespace OtosLotto
                 Console.WriteLine($"Tipp {i}: ");
                 int szam = int.Parse(Console.ReadLine());
 
-                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 91 > szam )
+                if (!Tartalmazza(tippeltek, szam) && 0 < szam && 91 > szam)
                 {
                     tippeltek.Add(szam);
                 }
@@ -67,7 +67,7 @@ namespace OtosLotto
         {
             for (int i = 0; i < lista.Count; i++)
             {
-                if (lista[i]==szam)
+                if (lista[i] == szam)
                 {
                     return true;
                 }
@@ -83,7 +83,7 @@ namespace OtosLotto
             {
                 for (int j = 0; j < tippeltek.Count; j++)
                 {
-                    if (sorsoltak[i]==tippeltek[j])
+                    if (sorsoltak[i] == tippeltek[j])
                     {
                         talalat++;
                     }
@@ -97,19 +97,19 @@ namespace OtosLotto
             switch (talalat)
             {
                 case 1:
-                    Console.WriteLine(1*10);
+                    Console.WriteLine(1 * 10);
                     break;
                 case 2:
-                    Console.WriteLine(2*10);
+                    Console.WriteLine(2 * 10);
                     break;
                 case 3:
-                    Console.WriteLine(3*10);
+                    Console.WriteLine(3 * 10);
                     break;
                 case 4:
-                    Console.WriteLine(4*10);
+                    Console.WriteLine(4 * 10);
                     break;
                 case 5:
-                    Console.WriteLine(5*10);
+                    Console.WriteLine(5 * 10);
                     break;
             }
         }
@@ -172,20 +172,25 @@ namespace OtosLotto
 
         static void Main(string[] args)
         {
+            Jatek();
+        }
 
+        private static void Jatek()
+        {
             bool jatek = true;
-            
-                Console.WriteLine("Szeretnél játszani? i/n");
-                string bekert = Console.ReadLine();
-                if (bekert == "i")
-                {
-                    jatek = true;
-                }
-                else
-                {
-                    jatek = false;
-                }
 
+            Console.WriteLine("Szeretnél játszani? i/n");
+            string bekert = Console.ReadLine();
+            if (bekert == "i")
+            {
+                jatek = true;
+            }
+            else
+            {
+                jatek = false;
+            }
+            while (jatek)
+            {
                 Kor();
                 Console.WriteLine("Tippjeid: ");
                 foreach (var t in tippeltek)
@@ -202,9 +207,18 @@ namespace OtosLotto
                 talalat = Vizsgal(sorsoltak, tippeltek);
                 Console.WriteLine($"Találataid száma: {talalat}");
                 Kifizet(talalat);
-            
-
+                Console.WriteLine();
+                Console.WriteLine("Szeretnél játszani? i/n");
+                bekert = Console.ReadLine();
+                if (bekert == "i")
+                {
+                    jatek = true;
+                }
+                else
+                {
+                    jatek = false;
+                }
+            }
         }
-        
     }
 }

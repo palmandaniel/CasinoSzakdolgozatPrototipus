@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtosLotto", "OtosLotto\OtosLotto.csproj", "{4EA6A9DB-FF35-4317-B0CB-42B104F1FDD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HatosLotto", "HatosLotto\HatosLotto.csproj", "{60754AFB-37AB-4445-B4C4-AFEB8AB334C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4EA6A9DB-FF35-4317-B0CB-42B104F1FDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA6A9DB-FF35-4317-B0CB-42B104F1FDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA6A9DB-FF35-4317-B0CB-42B104F1FDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60754AFB-37AB-4445-B4C4-AFEB8AB334C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60754AFB-37AB-4445-B4C4-AFEB8AB334C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60754AFB-37AB-4445-B4C4-AFEB8AB334C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60754AFB-37AB-4445-B4C4-AFEB8AB334C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
