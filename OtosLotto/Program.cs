@@ -213,6 +213,7 @@ namespace OtosLotto
                 if (bekert == "i")
                 {
                     jatek = true;
+                    Torles(sorsoltak, tippeltek, talalat);
                 }
                 else
                 {
