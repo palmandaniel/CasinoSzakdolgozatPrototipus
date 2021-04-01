@@ -1,0 +1,20 @@
+if (eredmeny.ContainsValue(4))
+            {
+                return "Póker";
+            }
+            else if (eredmeny.ContainsValue(5))
+            {
+                return "Nagypóker";
+            }
+            else if (eredmeny.ContainsValue(3))
+            {
+                if (eredmeny.ContainsValue(3) && eredmeny.ContainsValue(2))
+                {
+                    return "Full";
+                }
+                return "Drill";
+            }
+            else if (eredmeny.ContainsValue(2))
+            {
+                return "Pár";
+            }
