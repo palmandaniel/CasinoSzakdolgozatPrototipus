@@ -10,7 +10,6 @@ namespace BlackJack
     class LapBJ
     {
         public static List<LapBJ> pakli = new List<LapBJ>();
-        public static List<LapBJ> JatszmaPakli = new List<LapBJ>();
 
         private string szin;
 
@@ -64,14 +63,6 @@ namespace BlackJack
             }
 
             file.Close();
-        }
-
-        public static void Feltolt()
-        {
-            foreach (var p in pakli)
-            {
-                JatszmaPakli.Add(new LapBJ(p.szin, p.szam, p.ertek, p.megnevezes));
-            }
         }
 
     }
