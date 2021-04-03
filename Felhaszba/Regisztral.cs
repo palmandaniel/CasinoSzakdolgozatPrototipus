@@ -14,7 +14,6 @@ namespace FelhasznaloKezeles
     public partial class Regisztral : Form
     {
         DB adatbazis;
-        User felhasznalo;
 
         public Regisztral(DB adatbazis)
         {

@@ -43,7 +43,7 @@
             this.label1.Location = new System.Drawing.Point(21, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Teljes név:";
             // 
             // label2
@@ -52,7 +52,7 @@
             this.label2.Location = new System.Drawing.Point(21, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Felhasználónév:";
             // 
             // label3
@@ -61,7 +61,7 @@
             this.label3.Location = new System.Drawing.Point(21, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Jelszó:";
             // 
             // btnRegisztral
@@ -78,28 +78,28 @@
             // 
             this.tbTeljesnev.Location = new System.Drawing.Point(153, 30);
             this.tbTeljesnev.Name = "tbTeljesnev";
-            this.tbTeljesnev.Size = new System.Drawing.Size(100, 20);
-            this.tbTeljesnev.TabIndex = 4;
+            this.tbTeljesnev.Size = new System.Drawing.Size(282, 20);
+            this.tbTeljesnev.TabIndex = 0;
             // 
             // tbFelhasznalonev
             // 
             this.tbFelhasznalonev.Location = new System.Drawing.Point(153, 60);
             this.tbFelhasznalonev.Name = "tbFelhasznalonev";
-            this.tbFelhasznalonev.Size = new System.Drawing.Size(100, 20);
-            this.tbFelhasznalonev.TabIndex = 5;
+            this.tbFelhasznalonev.Size = new System.Drawing.Size(282, 20);
+            this.tbFelhasznalonev.TabIndex = 1;
             // 
             // tbJelszo
             // 
             this.tbJelszo.Location = new System.Drawing.Point(153, 91);
             this.tbJelszo.Name = "tbJelszo";
-            this.tbJelszo.Size = new System.Drawing.Size(100, 20);
-            this.tbJelszo.TabIndex = 6;
+            this.tbJelszo.Size = new System.Drawing.Size(282, 20);
+            this.tbJelszo.TabIndex = 2;
             // 
             // Regisztral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 187);
+            this.ClientSize = new System.Drawing.Size(479, 187);
             this.Controls.Add(this.tbJelszo);
             this.Controls.Add(this.tbFelhasznalonev);
             this.Controls.Add(this.tbTeljesnev);

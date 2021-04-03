@@ -42,7 +42,7 @@
             this.label1.Location = new System.Drawing.Point(87, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Felhasználónév:";
             // 
             // label2
@@ -51,30 +51,30 @@
             this.label2.Location = new System.Drawing.Point(87, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Jelszó:";
             // 
             // tbFelhasznalo
             // 
             this.tbFelhasznalo.Location = new System.Drawing.Point(177, 37);
             this.tbFelhasznalo.Name = "tbFelhasznalo";
-            this.tbFelhasznalo.Size = new System.Drawing.Size(138, 20);
-            this.tbFelhasznalo.TabIndex = 2;
+            this.tbFelhasznalo.Size = new System.Drawing.Size(242, 20);
+            this.tbFelhasznalo.TabIndex = 0;
             // 
             // tbJelszo
             // 
             this.tbJelszo.Location = new System.Drawing.Point(177, 70);
             this.tbJelszo.Name = "tbJelszo";
             this.tbJelszo.PasswordChar = '♠';
-            this.tbJelszo.Size = new System.Drawing.Size(138, 20);
-            this.tbJelszo.TabIndex = 3;
+            this.tbJelszo.Size = new System.Drawing.Size(242, 20);
+            this.tbJelszo.TabIndex = 1;
             // 
             // btnBelepes
             // 
             this.btnBelepes.Location = new System.Drawing.Point(177, 96);
             this.btnBelepes.Name = "btnBelepes";
             this.btnBelepes.Size = new System.Drawing.Size(138, 23);
-            this.btnBelepes.TabIndex = 4;
+            this.btnBelepes.TabIndex = 2;
             this.btnBelepes.Text = "Belépés";
             this.btnBelepes.UseVisualStyleBackColor = true;
             this.btnBelepes.Click += new System.EventHandler(this.btnBelepes_Click);
@@ -84,7 +84,7 @@
             this.btnRegisztral.Location = new System.Drawing.Point(177, 125);
             this.btnRegisztral.Name = "btnRegisztral";
             this.btnRegisztral.Size = new System.Drawing.Size(138, 23);
-            this.btnRegisztral.TabIndex = 5;
+            this.btnRegisztral.TabIndex = 3;
             this.btnRegisztral.Text = "Regisztráció";
             this.btnRegisztral.UseVisualStyleBackColor = true;
             this.btnRegisztral.Click += new System.EventHandler(this.btnRegisztral_Click);
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 175);
+            this.ClientSize = new System.Drawing.Size(496, 175);
             this.Controls.Add(this.btnRegisztral);
             this.Controls.Add(this.btnBelepes);
             this.Controls.Add(this.tbJelszo);
