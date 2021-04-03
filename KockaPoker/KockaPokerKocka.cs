@@ -25,20 +25,9 @@ namespace KockaPoker
         private int pont;
         public int Pont { get { return pont; } }
 
-
-        //public Kocka(int k1, int k2, int k3, int k4, int k5)
-        //{
-        //    kockak[0] = k1;
-        //    kockak[1] = k2;
-        //    kockak[2] = k3;
-        //    kockak[3] = k4;
-        //    kockak[4] = k5;
-
-        //    eredmeny = Erteke();
-        //}
-
         public void EgyDobas()
         {
+
             Random vel = new Random(Guid.NewGuid().GetHashCode());
             for (int i = 0; i < kockak.Length; i++)
             {

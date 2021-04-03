@@ -9,7 +9,7 @@ namespace KockajatekNagyobbMint
     class KockajatekKocka
     {
         public List<int> dobas = new List<int>();
-
+        
         public void Dobas(int DobasSzam)
         {
             dobas.Clear();

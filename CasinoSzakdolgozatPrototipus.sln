@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KockaPoker", "KockaPoker\Ko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KockajatekNagyobbMint", "KockajatekNagyobbMint\KockajatekNagyobbMint.csproj", "{4A782FB0-4B71-43B3-9577-39F479BC6BB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{7A84BB31-0677-48C4-A095-7A5D1864E220}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4A782FB0-4B71-43B3-9577-39F479BC6BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A782FB0-4B71-43B3-9577-39F479BC6BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A782FB0-4B71-43B3-9577-39F479BC6BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A84BB31-0677-48C4-A095-7A5D1864E220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A84BB31-0677-48C4-A095-7A5D1864E220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A84BB31-0677-48C4-A095-7A5D1864E220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A84BB31-0677-48C4-A095-7A5D1864E220}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
