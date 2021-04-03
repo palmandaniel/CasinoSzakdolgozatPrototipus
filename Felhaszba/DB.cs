@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace FelhasznaloKezeles
 {
-    class DB
+    public class DB
     {
         private MySqlConnection mySqlKapcsolat;
         public MySqlConnection MysqlKapcsolat

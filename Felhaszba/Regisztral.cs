@@ -11,22 +11,22 @@ using MySql.Data.MySqlClient;
 
 namespace FelhasznaloKezeles
 {
-    public partial class Belepes : Form
+    public partial class Regisztral : Form
     {
         DB adatbazis;
         User felhasznalo;
 
-        public Belepes()
+        public Regisztral(DB adatbazis)
         {
+            this.adatbazis = adatbazis;
             InitializeComponent();
-            adatbazis = new DB("localhost", "casinoprototipus", "root");
-
         }
 
-        private void btnBelepes_Click(object sender, EventArgs e)
+        private void btnRegisztral_Click(object sender, EventArgs e)
         {
-            string felhasznalonev = tbFelhasznalo.Text;
+            string felhasznalonev = tbFelhasznalonev.Text;
             string jelszo = tbJelszo.Text;
+            string teljesnev = tbTeljesnev.Text;
 
             if (felhasznalonev != "" && jelszo != "")
             {
@@ -48,12 +48,10 @@ namespace FelhasznaloKezeles
                             string felhasznaloNev = sorok["felhasznalonev"].ToString();
                             string felhasznaloJelszo = sorok["jelszo"].ToString();
                             string jogkor_id = sorok["jogkor_id"].ToString();
-                            string teljesnev = sorok["teljesnev"].ToString();
-
-                            felhasznalo = new User(felhasznaloNev, felhasznaloJelszo, jogkor_id, teljesnev);
+                            string teljesNev = sorok["teljesnev"].ToString();
                         }
 
-                        MessageBox.Show("Köszöntelek: " + felhasznalo.TeljesNev);
+                        MessageBox.Show("Felhasználónév foglalt!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //this.Hide();
                         adatbazis.MysqlKapcsolat.Close();
                         //frmFo formFo = new frmFo(adatbazis, felhasznalo);
@@ -61,9 +59,20 @@ namespace FelhasznaloKezeles
                     }
                     else
                     {
-                        MessageBox.Show("Felhasználónév vagy jelszó nem jó!", "Hiba",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                         adatbazis.MysqlKapcsolat.Close();
+                        adatbazis.MysqlKapcsolat.Open();
+                        string beilleszt = $"INSERT INTO felhasznalok (id, felhasznalonev, teljesnev, jelszo, jogkor_id) VALUES (NULL,'" + felhasznalonev + "', '" + teljesnev +"', '" + jelszo + "', '2')";
+
+                        MySqlCommand beszur = new MySqlCommand(beilleszt, adatbazis.MysqlKapcsolat);
+                        beszur.ExecuteNonQuery();
+
+                        MessageBox.Show("Sikeres regisztráció!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        adatbazis.MysqlKapcsolat.Close();
+                        this.Hide();
+                        this.Dispose();
+                        GC.Collect();
+                        Belepes formbelepes = new Belepes();
+                        formbelepes.ShowDialog();
                     }
                 }
                 catch (MySqlException ex)
@@ -78,14 +87,6 @@ namespace FelhasznaloKezeles
                 MessageBox.Show("Felhasználónév vagy jelszó nem lehet üres!", "Hiba",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnRegisztral_Click(object sender, EventArgs e)
-        {
-            Regisztral formregisztral = new Regisztral(adatbazis);
-            formregisztral.ShowDialog();
-            this.Dispose();
-            GC.Collect();
         }
     }
 }
