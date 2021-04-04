@@ -30,7 +30,7 @@ namespace BlackJack
             {
                 lap = veletlenindex.Next(0, jatszmaPakli.Count + 1);
                 for (int i = 0; i < jatszmaPakli.Count; i++)
-                { 
+                {
                     if (lap == i)
                     {
                         lista.Add(new LapBJ(jatszmaPakli[i].Szin, jatszmaPakli[i].Szam, jatszmaPakli[i].Ertek, jatszmaPakli[i].Megnevezes));
@@ -40,16 +40,52 @@ namespace BlackJack
             }
         }
 
-        static bool Tartalmazza(List<LapBJ> lista, int szam)
+        static bool LapotKer()
         {
-            for (int i = 0; i < lista.Count; i++)
+            Console.WriteLine("Kérsz lapot? i/n");
+            string valasz = Console.ReadLine();
+
+            if (valasz == "i")
             {
-                if (lista[i].Megnevezes == lista[szam].Megnevezes)
+                Osztas(1, jatekosPakli);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        static int Ertekel(List<LapBJ> lista)
+        {
+            int sum = 0;
+
+
+            foreach (var l in lista)
+            {
+                sum += l.Ertek;
+            }
+            AszVizsgalat(lista);
+
+
+            return sum;
+        }
+
+        static void AszVizsgalat(List<LapBJ> lista)
+        {
+            foreach (var l in lista)
+            {
+                if (l.Szam == "Asz" && Ertekel(lista) > 21)
                 {
-                    return true;
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        if (lista[i].Szam == "Asz")
+                        {
+                            lista[i].Ertek = 1;
+                        }
+                    }
                 }
             }
-            return false;
         }
 
         static void Main(string[] args)
@@ -63,32 +99,52 @@ namespace BlackJack
             //     Console.WriteLine($"{jP.Szin} - {jP.Szam} - {jP.Ertek} - {jP.Megnevezes}");
             //}
 
-            Osztas(9, jatekosPakli);
-            Osztas(9, gepPakli);
+            Osztas(2, jatekosPakli);
+            Console.WriteLine(Ertekel(jatekosPakli));
+            Osztas(2, gepPakli);
             for (int i = 0; i < jatekosPakli.Count; i++)
             {
                 Console.WriteLine(jatekosPakli[i].Megnevezes);
             }
             Console.WriteLine();
-            for (int i = 0; i < gepPakli.Count; i++)
-            {
-                Console.WriteLine(gepPakli[i].Megnevezes);
-            }
+            //for (int i = 0; i < gepPakli.Count; i++)
+            //{
+            //    Console.WriteLine(gepPakli[i].Megnevezes);
+            //}
 
-            int db = 0;
+            //int db = 0;
 
-            for (int i = 0; i < jatekosPakli.Count; i++)
+            //for (int i = 0; i < jatekosPakli.Count; i++)
+            //{
+            //    for (int j = 0; j < gepPakli.Count; j++)
+            //    {
+            //        if (jatekosPakli[i].Megnevezes == gepPakli[j].Megnevezes)
+            //        {
+            //            db++;
+            //        }
+            //    }
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine(db);
+
+            for (int i = 0; i < 1; i++)
             {
-                for (int j = 0; j < gepPakli.Count; j++)
+                LapotKer();
+                if (LapotKer()==true)
                 {
-                    if (jatekosPakli[i].Megnevezes == gepPakli[j].Megnevezes)
+                    foreach (var l in jatekosPakli)
                     {
-                        db++;
+                        Console.WriteLine(l.Megnevezes);
                     }
+                    Console.WriteLine(Ertekel(jatekosPakli));
+                    i--;
+                }
+                else
+                {
+                    Console.WriteLine("megálltál");
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine(db);
+
 
             Console.ReadLine();
         }
