@@ -1,0 +1,8 @@
+create database CasinoPrototipus default character set utf8 collate utf8_hungarian_ci;
+
+CREATE TABLE `casinoprototipus`.`felhasznalok` ( `id` INT NOT NULL AUTO_INCREMENT , `felhasznalonev` VARCHAR(40) NOT NULL , `teljesnev` VARCHAR(40) NOT NULL , `jelszo` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE `felhasznalok` ADD `jogosultsag` VARCHAR(20) NOT NULL AFTER `jelszo`;
+ALTER TABLE `felhasznalok` CHANGE `jogkor_id` `jogkor_id` INT NOT NULL;
+
+CREATE TABLE `casinoprototipus`.`jogkor` ( `id` INT NOT NULL DEFAULT '2' , `megnevezes` VARCHAR(40) NOT NULL DEFAULT 'felhasznalo' ) ENGINE = InnoDB;
+

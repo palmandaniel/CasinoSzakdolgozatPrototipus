@@ -21,33 +21,35 @@ namespace BlackJack
             }
         }
 
-        static void Osztas(int db)
+        static void Osztas(int db, List<LapBJ> lista)
         {
-            Random jvel = new Random(Guid.NewGuid().GetHashCode());
-            Random gvel = new Random(Guid.NewGuid().GetHashCode());
+            Random veletlenindex = new Random(Guid.NewGuid().GetHashCode());
+            int lap = 0;
 
-
-            for (int i = 1; i <= db; i++)
+            for (int j = 0; j < db; j++)
             {
-                int geplap = gvel.Next(0, jatszmaPakli.Count + 1);
-                int jatlap = jvel.Next(0, jatszmaPakli.Count + 1);
-
-                if (jvel != gvel)
-                {
-                    jatekosPakli.Add(new LapBJ(jatszmaPakli[jatlap].Szin, jatszmaPakli[jatlap].Szam, jatszmaPakli[jatlap].Ertek, jatszmaPakli[jatlap].Megnevezes));
-                    gepPakli.Add(new LapBJ(jatszmaPakli[geplap].Szin, jatszmaPakli[geplap].Szam, jatszmaPakli[geplap].Ertek, jatszmaPakli[geplap].Megnevezes));
-
-                    jatszmaPakli.RemoveAt(jatlap);
-                    jatszmaPakli.RemoveAt(geplap);
+                lap = veletlenindex.Next(0, jatszmaPakli.Count + 1);
+                for (int i = 0; i < jatszmaPakli.Count; i++)
+                { 
+                    if (lap == i)
+                    {
+                        lista.Add(new LapBJ(jatszmaPakli[i].Szin, jatszmaPakli[i].Szam, jatszmaPakli[i].Ertek, jatszmaPakli[i].Megnevezes));
+                        jatszmaPakli.RemoveAt(i);
+                    }
                 }
-                else
-                {
-                    i--;
-                }
-                geplap = 0;
-                jatlap = 0;
             }
+        }
 
+        static bool Tartalmazza(List<LapBJ> lista, int szam)
+        {
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].Megnevezes == lista[szam].Megnevezes)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         static void Main(string[] args)
@@ -61,7 +63,8 @@ namespace BlackJack
             //     Console.WriteLine($"{jP.Szin} - {jP.Szam} - {jP.Ertek} - {jP.Megnevezes}");
             //}
 
-            Osztas(9);
+            Osztas(9, jatekosPakli);
+            Osztas(9, gepPakli);
             for (int i = 0; i < jatekosPakli.Count; i++)
             {
                 Console.WriteLine(jatekosPakli[i].Megnevezes);
