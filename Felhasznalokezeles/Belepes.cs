@@ -58,6 +58,10 @@ namespace FelhasznaloKezeles
                         adatbazis.MysqlKapcsolat.Close();
                         //frmFo formFo = new frmFo(adatbazis, felhasznalo);
                         //formFo.ShowDialog();
+                        frmMenu formMenu = new frmMenu();
+                        this.Hide();
+                        this.Dispose();
+                        GC.Collect();
                     }
                     else
                     {

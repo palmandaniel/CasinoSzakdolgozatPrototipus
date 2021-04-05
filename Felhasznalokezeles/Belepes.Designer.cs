@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Belepes));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbFelhasznalo = new System.Windows.Forms.TextBox();
@@ -39,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 40);
+            this.label1.Location = new System.Drawing.Point(148, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 4;
@@ -48,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 73);
+            this.label2.Location = new System.Drawing.Point(148, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 5;
@@ -56,14 +57,14 @@
             // 
             // tbFelhasznalo
             // 
-            this.tbFelhasznalo.Location = new System.Drawing.Point(177, 37);
+            this.tbFelhasznalo.Location = new System.Drawing.Point(238, 116);
             this.tbFelhasznalo.Name = "tbFelhasznalo";
             this.tbFelhasznalo.Size = new System.Drawing.Size(242, 20);
             this.tbFelhasznalo.TabIndex = 0;
             // 
             // tbJelszo
             // 
-            this.tbJelszo.Location = new System.Drawing.Point(177, 70);
+            this.tbJelszo.Location = new System.Drawing.Point(238, 149);
             this.tbJelszo.Name = "tbJelszo";
             this.tbJelszo.PasswordChar = '♠';
             this.tbJelszo.Size = new System.Drawing.Size(242, 20);
@@ -71,7 +72,7 @@
             // 
             // btnBelepes
             // 
-            this.btnBelepes.Location = new System.Drawing.Point(177, 96);
+            this.btnBelepes.Location = new System.Drawing.Point(238, 175);
             this.btnBelepes.Name = "btnBelepes";
             this.btnBelepes.Size = new System.Drawing.Size(138, 23);
             this.btnBelepes.TabIndex = 2;
@@ -81,7 +82,7 @@
             // 
             // btnRegisztral
             // 
-            this.btnRegisztral.Location = new System.Drawing.Point(177, 125);
+            this.btnRegisztral.Location = new System.Drawing.Point(238, 204);
             this.btnRegisztral.Name = "btnRegisztral";
             this.btnRegisztral.Size = new System.Drawing.Size(138, 23);
             this.btnRegisztral.TabIndex = 3;
@@ -93,7 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 175);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(629, 341);
             this.Controls.Add(this.btnRegisztral);
             this.Controls.Add(this.btnBelepes);
             this.Controls.Add(this.tbJelszo);

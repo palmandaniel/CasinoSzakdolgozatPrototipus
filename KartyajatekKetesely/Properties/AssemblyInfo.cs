@@ -1,15 +1,15 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KepekTesztForm")]
+[assembly: AssemblyTitle("KartyajatekKetesely")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KepekTesztForm")]
+[assembly: AssemblyProduct("KartyajatekKetesely")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("df934c54-1362-4cef-8ecf-19b7558909f7")]
+[assembly: Guid("65f419cf-1c9e-4b4b-ba3d-625a5afcd9cd")]
 
 // Version information for an assembly consists of the following four values:
 //

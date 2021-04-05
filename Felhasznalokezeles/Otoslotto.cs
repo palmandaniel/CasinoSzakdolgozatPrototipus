@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KepekTesztForm
+
+namespace FelhasznaloKezeles
 {
-    public partial class Form1 : Form
+    public partial class Otoslotto : Form
     {
-        public Form1()
+        public Otoslotto()
         {
             InitializeComponent();
         }
-
     }
 }
+
